@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+/* ------------------------------
+   Base
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #d4aa00;
+  --gold-light: #f6d55c;
+  --blue-glow: #00c8ff;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ------------------------------
+   Header
+------------------------------ */
+header {
+  background: #000;
+  border-bottom: 2px solid var(--gold);
+  padding: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+}
+
+.header-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Cinzel", serif;
+  font-size: 32px;
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+nav a:hover {
+  opacity: .7;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--blue-glow);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ------------------------------
+   Main Visual
+------------------------------ */
+#main-visual {
+  width: 100%;
+  height: 90vh;
+  background: url("http://localhost:3845/assets/placeholder.png") center/cover no-repeat;
+  position: relative;
+}
+
+#main-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+}
+
+#main-visual .text {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-shadow: 0 0 20px var(--blue-glow);
+}
+
+#main-visual h2 {
+  font-family: "Cinzel", serif;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+#main-visual p {
+  font-size: 20px;
+}
+
+/* ------------------------------
+   Sections
+------------------------------ */
+section {
+  padding: 120px 0;
+  width: 100%;
+  background: #000;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.sec-heading {
+  font-family: "Cinzel", serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--gold-light);
+  text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* Section 1 card */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.18);
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#sec-1 .text {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#sec-1 img {
+  width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.4);
+  object-fit: cover;
+}
+
+/* Section 2 */
+#sec-2 .inner {
+  width: 1200px;        /* コンテナ幅 */
+  margin: 0 auto;       /* 左右中央寄せ */
+  text-align: center;   /* 内部テキストを中央寄せ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 子要素を縦に中央揃え */
+  gap: 30px;            /* テキストと画像の間隔 */
+}
+
+#sec-2 p {
+  width: 700px;         /* テキスト幅 */
+  margin: 0 auto;       /* 中央寄せ */
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;   /* テキストも中央寄せ */
+}
+
+
+#sec-2 img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.3);
+}
+
+/* Section 3 キャラカード風 */
+#sec-3 .inner {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#sec-3 figure {
+  width: 200px;
+  text-align: center;
+}
+
+#sec-3 figure img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.45);
+}
+
+#sec-3 figcaption {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* ------------------------------
+   Footer
+------------------------------ */
+footer {
+  background: #111;
+  padding: 30px 0;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 0 20px rgba(255,215,0,0.2);
+}
+
+footer .logo {
+  font-family: "Cinzel", serif;
+  font-size: 36px;
+  color: var(--gold-light);
+}
+
+footer small {
+  color: #ccc;
+}
+
+/* ------------------------------
+   ■ Section 共通（中央～下の領域を大きく）
+------------------------------ */
+.inner {
+  width: 1400px; /* ← 拡大 */
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   Section 1（全体を大きく）
+------------------------------ */
+#sec-1 .card {
+  padding: 60px;
+  gap: 60px;
+}
+
+#sec-1 .text {
+  width: 650px; /* ← テキストを大きく */
+  font-size: 18px;
+  line-height: 28px;
+}
+
+
+
+/* Section 1 Aboutの画像を上に */
+#sec-1 img {
+  margin-top: 0;        /* 上の余白をなくす */
+  align-self: flex-start; /* テキストと横並びの場合は上揃えにする */
+}
+
+
+/* ------------------------------
+   Section 2
+------------------------------ */
+#sec-2 p {
+  width: 700px;  /* ← テキスト幅アップ */
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#sec-2 img {
+  height: 500px; /* ← 背景画像大きめ */
+  border-radius: 14px;
+  box-shadow: 0 0 50px rgba(0, 200, 255, 0.4);
+}
+
+/* ------------------------------
+   Section 3（キャラ一覧を整列）
+------------------------------ */
+#sec-3 .inner {
+  width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ← 4枚を均等配置 */
+  gap: 50px 40px; /* 上下50px 左右40px */
+  justify-items: center;
+}
+
+#sec-3 .sec-heading {
+  grid-column: 1 / -1; /* 見出しを中央に全幅表示 */
+  margin-bottom: 40px;
+}
+
+#sec-3 figure {
+  width: 240px; /* ← カードサイズUP */
+  text-align: center;
+}
+
+#sec-3 figure img {
+  width: 240px;
+  height: 240px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 0 55px rgba(0, 200, 255, 0.5);
+}
+
+#sec-3 figcaption {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#main-visual .text h2 {
+  margin-bottom: 30px; /* ← これで上下の間隔が広がる */
+}
